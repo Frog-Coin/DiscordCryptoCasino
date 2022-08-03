@@ -78,7 +78,7 @@ async def create(ctx):
     address = getAddress(str(ctx.author.id))
     balance = getBalance(str(ctx.author.id))
     username = str(ctx.author)
-    botMessage = await ctx.channel.send(uid + ' ' + '\n**AltCasino Wallet - CHANGEME ** \n**Address:** '
+    botMessage = await ctx.channel.send(uid + ' ' + '\n**Frog Coin Casino Wallet - FROG ** \n**Address:** '
                                    + str(address) + ' \n**Balance:** ' + str(balance))
 
     time.sleep(5)
@@ -93,7 +93,7 @@ async def balance(ctx):
     uid = "<@" + str(ctx.author.id) + ">"
 
     newBalance = getBalance(str(ctx.author.id))
-    botMessage = await ctx.channel.send(uid + ' ' + '\n**AltCasino Wallet - CHANGEME** \n**Balance:** ' + str(newBalance) + ' CHANGEME')
+    botMessage = await ctx.channel.send(uid + ' ' + '\n**Frog Coin Casino Wallet - FROG** \n**Balance:** ' + str(newBalance) + ' FROG')
 
     time.sleep(5)
     await botMessage.delete()
@@ -108,7 +108,7 @@ async def casino(ctx):
     uid = "<@" + str(ctx.author.id) + ">"
 
     newBalance = getMainBalance()
-    botMessage = await ctx.channel.send(uid + ' ' + '\n**AltCasino Main Payout Wallet - CHANGEME** \n**Balance:** ' + str(newBalance) + ' CHANGEME')
+    botMessage = await ctx.channel.send(uid + ' ' + '\n**Frog Coin Casino Main Payout Wallet - FROG** \n**Balance:** ' + str(newBalance) + ' FROG')
 
     time.sleep(1)
 
@@ -127,7 +127,7 @@ async def address(ctx):
     userAddy = getNewAddy(str(ctx.author.id))
 
     print(userAddy)
-    botMessage = await ctx.channel.send(uid + '\n**AltCasino Wallet - CHANGEME**' + '\n**Wallet Address:** ' + userAddy)
+    botMessage = await ctx.channel.send(uid + '\n**Frog Coin Casino Wallet - FROG**' + '\n**Wallet Address:** ' + userAddy)
     time.sleep(5)
     await botMessage.delete()
     await ctx.message.delete()
@@ -164,19 +164,19 @@ async def coinflip(ctx, bet, userChoice):
     newBalance = toPlay
 
     if newBalance < float(bet):
-        botMessage = await ctx.channel.send(tuid + "\nSorry, you don't have that many coins. \n**Balance:** " + str(newBalance) + ' CHANGEME')
+        botMessage = await ctx.channel.send(tuid + "\nSorry, you don't have that many coins. \n**Balance:** " + str(newBalance) + ' FROG')
         time.sleep(5)
         await botMessage.delete()
         await ctx.message.delete()
         return
     elif float(bet) > MaxCoinFlipBet:
-        botMessage = await ctx.channel.send(tuid + "\nSorry, the max bet for Coinflip is " + str(MaxCoinFlipBet) + ' CHANGEME')
+        botMessage = await ctx.channel.send(tuid + "\nSorry, the max bet for Coinflip is " + str(MaxCoinFlipBet) + ' FROG')
         time.sleep(5)
         await botMessage.delete()
         await ctx.message.delete()
         return
     elif float(bet) < MinCoinFlipBet:
-        botMessage = await ctx.channel.send(tuid + "\nSorry, the minimum bet for Coinflip is " + str(MinCoinFlipBet) + ' CHANGEME')
+        botMessage = await ctx.channel.send(tuid + "\nSorry, the minimum bet for Coinflip is " + str(MinCoinFlipBet) + ' FROG')
         time.sleep(5)
         await botMessage.delete()
         await ctx.message.delete()
@@ -189,7 +189,7 @@ async def coinflip(ctx, bet, userChoice):
         landed = random.choice(options)
 
         if landed == betOn:
-            botMessage1 = await ctx.channel.send(tuid + "\nCoin landed on **" + landed.upper() + "**" + "\n**Congratulations!** You Won " + str(bet) + ' CHANGEME')
+            botMessage1 = await ctx.channel.send(tuid + "\nCoin landed on **" + landed.upper() + "**" + "\n**Congratulations!** You Won " + str(bet) + ' FROG')
             txid = sendCoins(myUid, userAddy, bet)
             botMessage = await ctx.channel.send(txid + " - txid")
             botMessage = await ctx.channel.send("**Please wait 5 seconds before placing a new bet**")
@@ -203,7 +203,7 @@ async def coinflip(ctx, bet, userChoice):
             return
 
         elif landed != betOn:
-            botMessage1 = await ctx.channel.send(tuid +"\nCoin landed on **" + landed.upper() + "**" + "\n**Oops!** You Lost " + str(bet) + ' CHANGEME')
+            botMessage1 = await ctx.channel.send(tuid +"\nCoin landed on **" + landed.upper() + "**" + "\n**Oops!** You Lost " + str(bet) + ' FROG')
             sendCoins(uid, LostBetsAddy, bet)
 
             botMessage = await ctx.channel.send("**Please wait 5 seconds before placing a new bet**")
@@ -368,7 +368,7 @@ async def blackjack(ctx, bet):
 
            # Determine if Player Hit and hasn't busted
             elif playerTotal > 21:
-                botMessage = await ctx.channel.send(tuid + "\nBust! You Lost " + str(bet) + ' CHANGEME \nYour Total: **' + str(playerTotal) + '**')
+                botMessage = await ctx.channel.send(tuid + "\nBust! You Lost " + str(bet) + ' FROG \nYour Total: **' + str(playerTotal) + '**')
                 sendCoins(uid, LostBetsAddy, bet)
 
                 botMessage = await ctx.channel.send("**Please wait 5 seconds before placing a new bet**")
@@ -405,7 +405,7 @@ async def blackjack(ctx, bet):
             elif dealerTotal > 21:
                 botMessage = await ctx.channel.send(tuid + "\nDealer Has " + '**' + str(dCards) + '**'
                     + "\nYou Have " + '**' + str(pCards) + '**' + ' : **' + str(playerTotal) + '**')
-                botMessage = await ctx.channel.send(tuid + "\nYou Won! " + str(bet) + " CHANGEME \nDealer Busted" + '\nYour Total: ' '**' + str(playerTotal) + '** \nDealer Total: **' + str(dealerTotal) + '**')
+                botMessage = await ctx.channel.send(tuid + "\nYou Won! " + str(bet) + " FROG \nDealer Busted" + '\nYour Total: ' '**' + str(playerTotal) + '** \nDealer Total: **' + str(dealerTotal) + '**')
                 sendCoins(myUid, userAddy, bet)
 
                 botMessage = await ctx.channel.send("**Please wait 5 seconds before placing a new bet**")
@@ -419,7 +419,7 @@ async def blackjack(ctx, bet):
                 if dealerTotal < playerTotal:
                     botMessage = await ctx.channel.send(tuid + "\nDealer Has " + '**' + str(dCards) + '**'
                     + "\nYou Have " + '**' + str(pCards) + '**' + ' : **' + str(playerTotal) + '**')
-                    botMessage = await ctx.channel.send(tuid + "\nYou Won! "  + str(bet) + ' CHANGEME \nYour Total: ' '**' + str(playerTotal) + '** \nDealer Total: **' + str(dealerTotal)+ '**')
+                    botMessage = await ctx.channel.send(tuid + "\nYou Won! "  + str(bet) + ' FROG \nYour Total: ' '**' + str(playerTotal) + '** \nDealer Total: **' + str(dealerTotal)+ '**')
                     sendCoins(myUid, userAddy, bet)
 
                     botMessage = await ctx.channel.send("**Please wait 5 seconds before placing a new bet**")
@@ -430,7 +430,7 @@ async def blackjack(ctx, bet):
                 elif dealerTotal > playerTotal:
                     botMessage = await ctx.channel.send(tuid + "\nDealer Has " + '**' + str(dCards) + '**'
                     + "\nYou Have " + '**' + str(pCards) + '**' + ' : **' + str(playerTotal) + '**')
-                    botMessage = await ctx.channel.send(tuid + "\nYou Lost! "  + str(bet) + ' CHANGEME \nYour Total: ' '**' + str(playerTotal) + '** \nDealer Total: **' + str(dealerTotal) + '**')
+                    botMessage = await ctx.channel.send(tuid + "\nYou Lost! "  + str(bet) + ' FROG \nYour Total: ' '**' + str(playerTotal) + '** \nDealer Total: **' + str(dealerTotal) + '**')
                     sendCoins(uid, LostBetsAddy, bet)
 
                     botMessage = await ctx.channel.send("**Please wait 5 seconds before placing a new bet**")
@@ -464,20 +464,20 @@ async def dice(ctx, bet, under):
 
     if newBalance < float(bet):
        botMessage = await ctx.channel.send(tuid + "\nSorry, you don't have that many coins. \n**Balance:** "
-        + str(newBalance) + ' CHANGEME')
+        + str(newBalance) + ' FROG')
        time.sleep(5)
        await botMessage.delete()
        await ctx.message.delete()
        return
 
     elif float(bet) > MaxDiceBet:
-        botMessage = await ctx.channel.send(tuid + "\nSorry, the max bet for Dice is " + str(MaxDiceBet) + ' CHANGEME')
+        botMessage = await ctx.channel.send(tuid + "\nSorry, the max bet for Dice is " + str(MaxDiceBet) + ' FROG')
         time.sleep(5)
         await botMessage.delete()
         await ctx.message.delete()
         return
     elif float(bet) < MinDiceBet:
-        botMessage = await ctx.channel.send(tuid + "\nSorry, the minimum bet for Dice is " + str(MinDiceBet) + ' CHANGEME')
+        botMessage = await ctx.channel.send(tuid + "\nSorry, the minimum bet for Dice is " + str(MinDiceBet) + ' FROG')
         time.sleep(5)
         await botMessage.delete()
         await ctx.message.delete()
@@ -528,7 +528,7 @@ async def dice(ctx, bet, under):
         return
 
     if roll == 2 and int(under) == 2:
-        botMessage = await ctx.channel.send(tuid + "\n**Snake Eyes!** \n**You Won " + str(payout) + ' CHANGEME**' +
+        botMessage = await ctx.channel.send(tuid + "\n**Snake Eyes!** \n**You Won " + str(payout) + ' FROG**' +
         "\nDice One: " + str(dice1) + "\nDice Two: " + str(dice2) + "\n**Total:** " + str(roll))
         sendCoins(myUid, userAddy, payout)
 
@@ -541,7 +541,7 @@ async def dice(ctx, bet, under):
         return
 
     elif roll < int(under):
-        botMessage = await ctx.channel.send(tuid + "\n**You Won " + str(payout) + ' CHANGEME**' +
+        botMessage = await ctx.channel.send(tuid + "\n**You Won " + str(payout) + ' FROG**' +
         "\nDice One: " + str(dice1) + "\nDice Two: " + str(dice2) + "\n**Total:** " + str(roll))
         sendCoins(myUid, userAddy, payout)
 
@@ -554,7 +554,7 @@ async def dice(ctx, bet, under):
         return
 
     elif roll >= int(under):
-        botMessage = await ctx.channel.send(tuid + "\n**You Lost " + str(bet) + ' CHANGEME**' +
+        botMessage = await ctx.channel.send(tuid + "\n**You Lost " + str(bet) + ' FROG**' +
         "\nDice One: " + str(dice1) + "\nDice Two: " + str(dice2) + "\n**Total:** " + str(roll))
         sendCoins(uid, LostBetsAddy, bet)
 

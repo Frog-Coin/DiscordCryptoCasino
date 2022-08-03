@@ -66,7 +66,7 @@ def getBalance(userId):
 
 
 def getMainBalance():
-    WalletBalance = host.call('getbalance', 'CHANGEME-PayoutWALLETACCOUNT')
+    WalletBalance = host.call('getbalance', 'FROG-PayoutWALLETACCOUNT')
     print(WalletBalance)
     return WalletBalance
 
