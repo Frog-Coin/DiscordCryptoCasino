@@ -39,7 +39,7 @@ class RPCHost(object):
 
 # The RPC username and RPC password MUST match the one in your bitcoin.conf file
 
-serverURL = 'http://rpcuser:rpcpassword@127.0.0.1:rpcport'
+serverURL = 'http://yourusername:Eujtou59hKFVkPP1T8ra1HDHnyT7KSMY@127.0.0.1:20925'
 
 
 #Using the class defined in the bitcoin_rpc_class.py
@@ -49,7 +49,7 @@ host = RPCHost(serverURL)
 # Gets a new address
 
 def getAddress(userId):
- 
+
     WalletResponse = host.call('getnewaddress', userId)
     print(WalletResponse)
     return WalletResponse
@@ -61,7 +61,7 @@ def getBalance(userId):
     WalletBalance = host.call('getbalance', userId)
     print(WalletBalance)
     return WalletBalance
-    
+
 # Gets Main Wallet Balance balance
 
 
