@@ -12,7 +12,6 @@ dataclasses==0.6
 discord.py==1.2.3
 ecdsa==0.13
 forever==0.8.26
-get==2019.4.13
 gevent==1.4.0
 greenlet==0.4.15
 html5lib==1.0.1
@@ -21,10 +20,10 @@ isort==4.3.21
 jsmin==2.2.2
 json-rpc==1.12.1
 jsonrpc==1.2
+launchpadlib=1.10.13
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
 multidict==4.5.2
-post==2019.4.13
 public==2019.4.13
 pycodestyle==2.5.0
 pycparser==2.19
@@ -35,7 +34,6 @@ pylint-plugin-utils==0.5
 pymongo==3.9.0
 pytz==2019.2
 query-string==2019.4.13
-request==2019.4.13
 requests==2.22.0
 six==1.12.0
 soupsieve==1.9.2
