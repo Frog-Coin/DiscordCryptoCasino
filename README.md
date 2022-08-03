@@ -1,9 +1,9 @@
 # DiscordCryptoCasino
 Discord bot for gambling with any altcoin/cryptocurrency. Games include Blackjack, Dice, &amp; Coinflip
 
-#Frog Coin
- updated wording to accept Frog Of Standard
- updated Critical requirements
+# Frog Coin
+ -updated wording to accept Frog Of Standard
+ -updated Critical requirements
 
 # bigtrevs98 - Updates/Fixes
  Updated to jsonrpc 2.0 / fetch.py  
