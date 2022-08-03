@@ -39,7 +39,7 @@ class RPCHost(object):
 
 # The RPC username and RPC password MUST match the one in your bitcoin.conf file
 
-serverURL = 'http://yourusername:Eujtou59hKFVkPP1T8ra1HDHnyT7KSMY@127.0.0.1:20925'
+serverURL = 'http://FROGrpcuser:@127.0.0.1:20925'
 
 
 #Using the class defined in the bitcoin_rpc_class.py
