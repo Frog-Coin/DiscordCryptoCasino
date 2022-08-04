@@ -32,7 +32,7 @@ bot.remove_command("help")
 async def on_ready():
     print("Bot is online!")
     print('Logged in as {0.user}'.format(bot))
-    await bot.change_presence(activity=discord.Game(name="$help"))
+    await bot.change_presence(activity=discord.watching(name="The Tables $help"))
 
 
 @bot.command()
@@ -92,7 +92,7 @@ async def balance(ctx):
 
     uid = "<@" + str(ctx.author.id) + ">"
 
-    newBalance = getBalance(str(ctx.author.id))
+    newBalance = getbalance(str(ctx.author.id))
     botMessage = await ctx.channel.send(uid + ' ' + '\n**Frog Coin Casino Wallet - FROG** \n**Balance:** ' + str(newBalance) + ' FROG')
 
     time.sleep(5)

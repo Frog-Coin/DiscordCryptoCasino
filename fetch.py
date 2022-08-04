@@ -62,11 +62,11 @@ def getBalance(userId):
     print(WalletBalance)
     return WalletBalance
 
-# Gets Main Wallet Balance balance
+# Gets Main Wallet Balance balance // change bot to local wallt UID
 
 
 def getMainBalance():
-    WalletBalance = host.call('getbalance', 'FROG-PayoutWALLETACCOUNT')
+    WalletBalance = host.call('getbalance', 'bot')
     print(WalletBalance)
     return WalletBalance
 
