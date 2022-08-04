@@ -20,7 +20,7 @@ isort==4.3.21
 jsmin==2.2.2
 json-rpc==1.12.1
 jsonrpc==1.2
-launchpadlib=1.10.13
+launchpadlib==1.10.13
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
 multidict==4.5.2
