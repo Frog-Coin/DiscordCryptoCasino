@@ -58,12 +58,12 @@ async def payouts(ctx):
     \nUnder 11 Payout = 1.02 * Bet
     \nUnder 10 Payout = 1.05 * Bet
     \nUnder 9 Payout = 1.2 * Bet
-    \nUnder 8 Payout = 1.45 * Bet
+    \nUnder 8 Payout = 1.3 * Bet
     \nUnder 7 Payout = 1.75 * Bet
     \nUnder 6 Payout = 2 * Bet
-    \nUnder 5 Payout = 2.35 * Bet
+    \nUnder 5 Payout = 2.25 * Bet
     \nUnder 4 Payout = 2.75 * Bet
-    \nUnder 3 Payout = 3.5 * Bet
+    \nUnder 3 Payout = 3.25 * Bet
     \nSnake Eyes Payout = 4 * Bet```
     """)
 
@@ -495,17 +495,17 @@ async def dice(ctx, bet, under):
     if int(under) == 2:
         payout = float(bet) * 4
     if int(under) == 3:
-        payout = float(bet) * 3.5
+        payout = float(bet) * 3.25
     if int(under) == 4:
         payout = float(bet) * 2.75
     if int(under) == 5:
-        payout = float(bet) * 2.35
+        payout = float(bet) * 2.25
     if int(under) == 6:
-        payout = float(bet) * 1.2
+        payout = float(bet) * 2
     if int(under) == 7:
         payout = float(bet) * 1.75
     if int(under) == 8:
-        payout = float(bet) * 1.45
+        payout = float(bet) * 1.3
     if int(under) == 9:
         payout = float(bet) * 1.2
     if int(under) == 10:
